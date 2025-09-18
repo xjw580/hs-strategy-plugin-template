@@ -6,12 +6,12 @@
     <parent>
         <groupId>com.github.xjw580.Hearthstone-Script</groupId>
         <artifactId>hs-script</artifactId>
-        <version>v4.9.0.1-DEV</version>
+        <version>v4.10.0-GA</version>
     </parent>
 
     <groupId>com.github.xjw580</groupId>
     <artifactId>hs-strategy-plugin-template</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
 
     <name>hs-strategy-plugin-template</name>
 
@@ -39,7 +39,7 @@
     </properties>
 
     <build>
-        <finalName>${artifactId}</finalName>
+        <finalName>${project.artifactId}</finalName>
         <sourceDirectory>src/main/kotlin</sourceDirectory>
         <resources>
             <resource>
