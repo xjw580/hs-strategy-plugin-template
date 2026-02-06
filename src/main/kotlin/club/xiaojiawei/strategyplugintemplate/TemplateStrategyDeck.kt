@@ -7,8 +7,7 @@ import club.xiaojiawei.hsscriptcardsdk.bean.area.DeckArea
 import club.xiaojiawei.hsscriptcardsdk.bean.area.HandArea
 import club.xiaojiawei.hsscriptcardsdk.bean.area.PlayArea
 import club.xiaojiawei.hsscriptcardsdk.bean.isValid
-import club.xiaojiawei.hsscriptcardsdk.data.CARD_INFO_TRIE
-import club.xiaojiawei.hsscriptcardsdk.data.CARD_WEIGHT_TRIE
+import club.xiaojiawei.hsscriptcardsdk.data.CARD_DATA_TRIE
 import club.xiaojiawei.hsscriptcardsdk.enums.CardRaceEnum
 import club.xiaojiawei.hsscriptcardsdk.enums.CardTypeEnum
 import club.xiaojiawei.hsscriptcardsdk.status.WAR
@@ -104,15 +103,14 @@ class TemplateStrategyDeck : DeckStrategy() {
             log.info { "该卡牌为 冰霜女巫吉安娜" }
         }
 
-//        获取用户设置的卡牌权重
-        val cardWeightTrie = CARD_WEIGHT_TRIE
-//        冰霜女巫吉安娜的权重
-        val weight = cardWeightTrie["ICC_833"]
-
-//        获取用户设置的卡牌行为
-        val cardInfoTrie = CARD_INFO_TRIE
-//        冰霜女巫吉安娜的卡牌行为
-        val cardInfo = cardInfoTrie["ICC_833"]
+//        获取用户设置的卡牌数据（包含权重和行为）
+        val cardDataTrie = CARD_DATA_TRIE
+//        冰霜女巫吉安娜的卡牌数据
+        val cardData = cardDataTrie["ICC_833"]
+//        获取权重
+        val weight = cardData?.weight
+//        获取卡牌行为
+        val cardInfo = cardData
 
 
         /**
